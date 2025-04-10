@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router-dom";
+import NavLanding from '../Landing/NavLanding';
 
 function ArtisansRegistration() {
   const [showPassword, setShowPassword] = useState(false);
@@ -70,6 +71,8 @@ function ArtisansRegistration() {
   };
 
   return (
+    <>
+     <NavLanding/>
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto w-full">
         <h2 className="text-center text-3xl font-extrabold text-gray-900 mb-8">
@@ -265,6 +268,7 @@ function ArtisansRegistration() {
         </form>
       </div>
     </div>
+    </>
   );
 }
 

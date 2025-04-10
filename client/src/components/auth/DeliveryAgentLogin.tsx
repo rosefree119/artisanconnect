@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import NavLanding from '../Landing/NavLanding';
 
 function DeliveryAgentLogin() {
       const [showPassword, setShowPassword] = useState(false);
@@ -15,6 +16,7 @@ function DeliveryAgentLogin() {
     
   return (
     <div>
+       <NavLanding/>
           <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
               <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">

@@ -5,7 +5,7 @@ import LoginForm from './components/auth/LoginForm';
 import RegisterForm from './components/auth/RegisterForm';
 import ProductDetail from './components/products/ProductDetail';
 import ProductList from './components/products/ProductList';
-import UserHome from "./components/home/UserHome"
+import UserHome from "./components/home/UserHome";
 import AdminDashboard from './components/admin/AdminDashboard';
 import ArtisanLogin from "./components/auth/ArtisansLogin";
 import ArtisanRegister from "./components/auth/ArtisansRegistration";
@@ -13,6 +13,8 @@ import DeliveryAgentLogin from './components/auth/DeliveryAgentLogin';
 import DeliveryAgentRegistration from './components/auth/DeliveryAgentRegistration';
 import ContactPage from './components/Landing/ContactPage';
 import AboutPage from './components/Landing/AboutPage';
+
+// #5046f4
 function App() {
   return (
     <BrowserRouter>
