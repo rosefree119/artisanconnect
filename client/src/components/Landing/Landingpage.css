@@ -1,12 +1,14 @@
 .landing-page {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: white;
-    color: #3f3f74;
+    color: #4444ce;
   }
   
   /* Navbar */
+
+
 .navbar-custom {
-    background-color: #9351b6; /* Dark gray background */
+    background-color:  #5046f4;/* Dark gray background */
     padding: 0.8rem 2rem;
   }
   
@@ -101,7 +103,7 @@
   
   .features-title {
     margin-bottom: 2rem;
-    color: indigo;
+    color:  #5046f4;
   }
   
   .feature-cards {

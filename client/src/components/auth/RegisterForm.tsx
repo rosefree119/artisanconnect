@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
+import NavLanding from '../Landing/NavLanding';
+
 
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -64,6 +66,8 @@ const RegisterForm = () => {
   };
 
   return (
+    <>
+     <NavLanding/>
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto w-full">
         <h2 className="text-center text-3xl font-extrabold text-gray-900 mb-8">Create your account</h2>
@@ -204,6 +208,7 @@ const RegisterForm = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 
