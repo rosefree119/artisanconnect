@@ -126,6 +126,43 @@
     object-fit: cover;
     border-radius: 10px;
   }
+
+
+
+
+
+
+
+
+
+  .video-section-wrapper {
+    background-color: #f9f9f9;
+  }
+  
+  .video-column {
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .video {
+    width: 80%;
+    height: 500px;
+    border-radius: 1rem;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-column {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+
   
   /* CTA Section */
   .cta-section {
