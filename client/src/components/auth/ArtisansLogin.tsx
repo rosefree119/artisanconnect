@@ -1,16 +1,40 @@
 import React, { useState } from 'react';
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 import NavLanding from '../Landing/NavLanding';
+import axiosInstance from '../../BaseApi/Baseurl';
+
 function ArtisansLogin() {
-      const [showPassword, setShowPassword] = useState(false);
-      const [email, setEmail] = useState('');
-      const [password, setPassword] = useState('');
-    
-      const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Handle login logic here
-      };
+  const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+
+    try {
+      const response = await axiosInstance.post('/loginUser', {
+        email,
+        password
+      });
+console.log(response,"response");
+
+      if (response.data.status==200) {
+        // You can save token or user data to localStorage here
+        localStorage.setItem('userToken', response.data.token);
+        // Redirect to user dashboard or home
+        navigate('/buyer/homepage');
+      } else {
+        setError(response.data.message || 'Login failed');
+      }
+    } catch (err: any) {
+      setError(err.response?.data?.message || 'An error occurred during login');
+    }
+  };
+
     
   return (
     <div>
