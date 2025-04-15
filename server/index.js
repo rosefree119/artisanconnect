@@ -10,7 +10,7 @@ app.use(express.static(`${__dirname}/upload`));
 
 app.use(cors())
 const route=require('./routes')
-app.use('/atresian_marketplace',route)
+app.use('/atresian_connect',route)
 
 app.listen(4004,()=>{
     console.log("Server created successfully at 4004");
