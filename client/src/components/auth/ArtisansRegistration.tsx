@@ -109,11 +109,11 @@ function ArtisansRegistration() {
   return (
     <>
       <NavLanding />
-      <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className=" bg-gray-50 flex flex-col justify-center  px-2 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto w-full">
-          <h2 className="text-center text-3xl font-extrabold text-gray-900 mb-8">Create your account</h2>
+          <h2 className="text-center text-3xl font-extrabold text-gray-900 my-3">Create your account</h2>
 
-          <form onSubmit={handleSubmit} noValidate className="bg-white p-8 rounded-lg shadow-md grid md:grid-cols-2 gap-6">
+          <form onSubmit={handleSubmit} noValidate className="bg-white p-4 rounded-lg shadow-md grid md:grid-cols-2 gap-6">
             
             {/* First Name */}
             <div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import NavLanding from '../Landing/NavLanding';
 import axiosInstance from '../../BaseApi/Baseurl';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -24,7 +24,7 @@ console.log(response,"response");
 
       if (response.data.status==200) {
         // You can save token or user data to localStorage here
-        localStorage.setItem('userToken', response.data.token);
+        localStorage.setItem('buyerid', response.data.data._id);
         // Redirect to user dashboard or home
         setTimeout(()=>{
           navigate('/buyer/homepage')
@@ -41,7 +41,7 @@ console.log(response,"response");
   return (
     <>
       <NavLanding />
-      <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+      <div className="bg-gray-50 flex flex-col justify-center sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Sign in to your account
@@ -120,9 +120,9 @@ console.log(response,"response");
                 </div>
 
                 <div className="text-sm">
-                  <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  <Link to={"/buyer/forgetpassword"} className="font-medium text-indigo-600 hover:text-indigo-500">
                     Forgot your password?
-                  </a>
+                  </Link>
                 </div>
               </div>
 

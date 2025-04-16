@@ -48,7 +48,7 @@ function NavLanding() {
                 <Dropdown.Item href="">
                   <Link to="/deliveryagent/login">Delivery Agents</Link>{" "}
                 </Dropdown.Item>
-                <Dropdown.Item href="">Administrator</Dropdown.Item>
+                <Dropdown.Item href=""><Link to="/admin/login">Administrator</Link></Dropdown.Item>
               </DropdownButton>
 
               {/* Sign Up Dropdown */}

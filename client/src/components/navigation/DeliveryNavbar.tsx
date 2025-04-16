@@ -2,7 +2,7 @@ import React from 'react';
 import { Search, ShoppingCart, Heart, User, Menu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const DeliveryNavbar = () => {
   return (
     <nav className="bg-white shadow-md">
       {/* Top Bar */}
@@ -34,7 +34,7 @@ const Navbar = () => {
               <ShoppingCart className="h-6 w-6 text-gray-600" />
             </button>
             <button className="p-2 hover:bg-gray-100 rounded-full">
-              <Link to={"/buyer/profile"}> <User className="h-6 w-6 text-gray-600" /></Link>
+             <Link to={"/deliveryagent/profile"} ><User className="h-6 w-6 text-gray-600" /></Link>
             </button>
           </div>
 
@@ -63,4 +63,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default DeliveryNavbar;

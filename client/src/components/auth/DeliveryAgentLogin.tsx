@@ -1,23 +1,58 @@
 import React, { useState } from 'react';
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import NavLanding from '../Landing/NavLanding';
+import axiosInstance from "../../BaseApi/Baseurl";
 
 function DeliveryAgentLogin() {
-      const [showPassword, setShowPassword] = useState(false);
-      const [email, setEmail] = useState('');
-      const [password, setPassword] = useState('');
-    
-      const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Handle login logic here
-      };
-    
+  const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+  
+    try {
+      const response = await axiosInstance.post('/logindelivery', {
+        email,
+        password,
+      });
+  
+      const resData = response.data;
+      console.log(resData, "Login response");
+  
+      switch (resData.status) {
+        case 200:
+          // Save data to localStorage if needed
+          localStorage.setItem('deliveryagentid', JSON.stringify(resData.data._id));
+          // Redirect to dashboard
+          navigate('/buyer/homepage');
+          break;
+  
+        case 400:
+        case 407:
+        case 401:
+          // These are handled as alert messages
+          alert(resData.msg);
+          break;
+  
+        default:
+          alert('Unexpected response. Please try again.');
+      }
+    } catch (err: any) {
+      console.error("Login Error", err);
+      setError(err.response?.data?.msg || 'An error occurred during login');
+    }
+  };
+  
     
   return (
     <div>
        <NavLanding/>
-          <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+          <div className="bg-gray-50 flex flex-col justify-center sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
               <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
                 Sign in to your account
@@ -91,9 +126,9 @@ function DeliveryAgentLogin() {
                     </div>
       
                     <div className="text-sm">
-                      <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                      <Link to={"/deliveryagent/forgetpassword"} className="font-medium text-indigo-600 hover:text-indigo-500">
                         Forgot password?
-                      </a>
+                      </Link>
                     </div>
                   </div>
       

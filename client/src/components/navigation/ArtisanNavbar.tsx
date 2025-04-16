@@ -1,8 +1,8 @@
-import React from 'react';
-import { Search, ShoppingCart, Heart, User, Menu } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Search, ShoppingCart, Heart, User, Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const ArtisanNavbar = () => {
   return (
     <nav className="bg-white shadow-md">
       {/* Top Bar */}
@@ -10,7 +10,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-indigo-600">ArtisanConnect</h1>
+            <h1 className="text-2xl font-bold text-indigo-600">
+              ArtisanConnect
+            </h1>
           </div>
 
           {/* Search Bar */}
@@ -34,15 +36,18 @@ const Navbar = () => {
               <ShoppingCart className="h-6 w-6 text-gray-600" />
             </button>
             <button className="p-2 hover:bg-gray-100 rounded-full">
-              <Link to={"/buyer/profile"}> <User className="h-6 w-6 text-gray-600" /></Link>
+            <Link to={"/artisan/profile"}> <User className="h-6 w-6 text-gray-600" /></Link>
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button className="p-2 hover:bg-gray-100 rounded-full">
+            
+              {" "}
+              <button className="p-2 hover:bg-gray-100 rounded-full">
               <Menu className="h-6 w-6 text-gray-600" />
-            </button>
+              </button>
+            
           </div>
         </div>
       </div>
@@ -51,11 +56,21 @@ const Navbar = () => {
       <div className="bg-gray-50 border-t">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-8 h-12 text-sm">
-            <a href="#" className="text-gray-600 hover:text-indigo-600">Home</a>
-            <a href="#" className="text-gray-600 hover:text-indigo-600">Categories</a>
-            <a href="#" className="text-gray-600 hover:text-indigo-600">Featured Artisans</a>
-            <a href="#" className="text-gray-600 hover:text-indigo-600">New Arrivals</a>
-            <a href="#" className="text-gray-600 hover:text-indigo-600">Deals</a>
+            <a href="#" className="text-gray-600 hover:text-indigo-600">
+              Home
+            </a>
+            <a href="#" className="text-gray-600 hover:text-indigo-600">
+              Categories
+            </a>
+            <a href="#" className="text-gray-600 hover:text-indigo-600">
+              Featured Artisans
+            </a>
+            <a href="#" className="text-gray-600 hover:text-indigo-600">
+              New Arrivals
+            </a>
+            <a href="#" className="text-gray-600 hover:text-indigo-600">
+              Deals
+            </a>
           </div>
         </div>
       </div>
@@ -63,4 +78,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default ArtisanNavbar;
