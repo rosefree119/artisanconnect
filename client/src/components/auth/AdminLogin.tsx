@@ -4,29 +4,29 @@ import { Link, useNavigate } from "react-router-dom";
 import NavLanding from "../Landing/NavLanding";
 import axiosInstance from "../../BaseApi/Baseurl";
 
-function ArtisansLogin() {
+function AdminLogin() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  let fixedemail = "admin@gmail.com";
+  let fixedpassword = "Admin@123";
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
     try {
-      const response = await axiosInstance.post("/loginUser", {
-        email,
-        password,
-      });
-      console.log(response, "response");
-
-      if (response.data.status == 200) {
-        localStorage.setItem("artisanid", response.data.data._id);
-        navigate("/artisan/homepage");
+      if (email !== fixedemail) {
+        setError("Email is incorrect");
+      } else if (password !== fixedpassword) {
+        setError("Password is incorrect");
       } else {
-        setError(response.data.message || "Login failed");
+        // Email and password both correct
+        localStorage.setItem("Token", "admintoken");
+        navigate("/admin/homepage");
       }
     } catch (err: any) {
       setError(err.response?.data?.message || "An error occurred during login");
@@ -91,7 +91,9 @@ function ArtisansLogin() {
                     onChange={(e) => setPassword(e.target.value)}
                     className="block w-full pl-10 pr-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
+                 
                   <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
+                    
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
@@ -106,33 +108,11 @@ function ArtisansLogin() {
                   </div>
                 </div>
               </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <input
-                    id="remember-me"
-                    name="remember-me"
-                    type="checkbox"
-                    className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                  />
-                  <label
-                    htmlFor="remember-me"
-                    className="ml-2 block text-sm text-gray-900"
-                  >
-                    Remember me
-                  </label>
-                </div>
-
-                <div className="text-sm">
-                  <Link
-                    to={"/artisan/forgetpassword"}
-                    className="font-medium text-indigo-600 hover:text-indigo-500"
-                  >
-                    Forgot your password?
-                  </Link>
-                </div>
-              </div>
-
+              {error && (
+                    <div className="text-red-500 text-sm text-center">
+                      {error}
+                    </div>
+                  )}
               <div>
                 <button
                   type="submit"
@@ -142,28 +122,6 @@ function ArtisansLogin() {
                 </button>
               </div>
             </form>
-
-            <div className="mt-6">
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-300" />
-                </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="px-2 bg-white text-gray-500">
-                    Don't have an account?
-                  </span>
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <Link
-                  to="/artisan/register"
-                  className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-indigo-50 hover:bg-indigo-100"
-                >
-                  Create an account
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -171,4 +129,4 @@ function ArtisansLogin() {
   );
 }
 
-export default ArtisansLogin;
+export default AdminLogin;
