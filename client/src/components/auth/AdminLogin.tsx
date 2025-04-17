@@ -25,7 +25,7 @@ function AdminLogin() {
         setError("Password is incorrect");
       } else {
         // Email and password both correct
-        localStorage.setItem("Token", "admintoken");
+        localStorage.setItem("adminid", "adminid");
         navigate("/admin/homepage");
       }
     } catch (err: any) {
