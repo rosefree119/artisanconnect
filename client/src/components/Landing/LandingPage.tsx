@@ -17,6 +17,13 @@ import hero6 from "../../assets/hero6.jpg";
 import feature1 from "../../assets/feature1.jpg";
 import feature2 from "../../assets/feature2.jpg";
 import feature3 from "../../assets/feature3.jpg";
+import spotlight1 from "../../assets/spotlight1.jpg";
+import spotlight2 from "../../assets/spotlight2.jpg";
+import spotlight3 from "../../assets/spotlight3.jpg";
+import best1 from "../../assets/best1.jpg";
+import best2 from "../../assets/best2.jpg";
+import best3 from "../../assets/best3.jpg";
+
 import video from "../../assets/vid2.mp4";
 import "./LandingPage.css";
 import NavLanding from "./NavLanding";
@@ -90,53 +97,139 @@ export default function LandingPage() {
       </section>
 
       <div className="video-section-wrapper py-5">
-      <Container>
-        <Row className="align-items-center">
-          {/* Video Column */}
-          <Col md={4} className="video-column">
-            <video className="video" controls>
-              <source src={video} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </Col>
+        <Container>
+          <Row className="align-items-center">
+            {/* Video Column */}
+            <Col md={4} className="video-column">
+              <video className="video" controls>
+                <source src={video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </Col>
 
-          {/* Description Column */}
-          <Col md={8} className="text-column">
-            <p>
-              We work directly with these talented creators to ensure that every
-              item tells a unique story—rooted in authenticity, made with
-              integrity, and crafted using high-quality, locally sourced
-              materials. When you purchase from us, you're not just buying a
-              product; you're investing in the legacy of genuine craftsmanship
-              and supporting the livelihoods of artisans across the region.
+            {/* Description Column */}
+            <Col md={8} className="text-column main-text">
+              <p>
+                We work directly with these talented creators to ensure that
+                every item tells a unique story—rooted in authenticity, made
+                with integrity, and crafted using high-quality, locally sourced
+                materials. When you purchase from us, you're not just buying a
+                product; you're investing in the legacy of genuine craftsmanship
+                and supporting the livelihoods of artisans across the region.
+                <br />
+                <br />
+                Whether you're shopping for unique goods, showcasing your craft,
+                or delivering with pride, ArtisanConnect is where passion meets
+                purpose. Join a community that values quality over quantity,
+                stories over mass production, and people over profit. Together,
+                let’s celebrate creativity, support small businesses, and make
+                every purchase meaningful.
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </div>
 
-            </p>
-          </Col>
-        </Row>
-      </Container>
-    </div>
-
-      {/* CTA Section 
-      <section className="cta-section">
-        <h2>Download the App</h2>
-        {/* <div className="cta-buttons">
-          <Button variant="light" className="cta-btn d-flex align-items-center justify-content-center">
-            <FaGooglePlay className="cta-icon" /> Google Play
-          </Button>
-          <Button variant="light" className="cta-btn d-flex align-items-center justify-content-center">
-            <FaApple className="cta-icon" /> App Store
-          </Button>
-        </div>
+      <section className="community-spotlight-oval my-5 py-4">
+        <h2 className="text-center mb-5 spotlight-heading">
+          ✨ Community Spotlight
+        </h2>
+        <Container>
+          <Row className="gy-5 justify-content-center">
+            {[
+              {
+                img: spotlight1,
+                name: "Priya S.",
+                craft: "Terracotta Artist – Madurai",
+                story:
+                  "Priya’s earthy terracotta pieces breathe life into traditional South Indian design. Her dedication to reviving heritage art has touched homes across the region.",
+              },
+              {
+                img: spotlight2,
+                name: "Rahim K.",
+                craft: "Carpenter and designer– Kochi",
+                story:
+                  "Rahim transforms any piece of wood into elegant, eco-friendly products. Every piece is a blend of sustainability and soul.",
+              },
+              {
+                img: spotlight3,
+                name: "Meena",
+                craft: "Handloom Weavers – Salem",
+                story:
+                  "This weaver weaves magic with threads. Their colorful sarees and scarves are rooted in culture and woven with love.",
+              },
+            ].map(({ img, name, craft, story }, idx) => (
+              <Col md={4} key={idx}>
+                <Card className="text-center shadow-sm p-3 border-0 spotlight-oval-card">
+                  <div className="d-flex justify-content-center mb-3">
+                    <img src={img} alt={name} className="oval-img" />
+                  </div>
+                  <Card.Body>
+                    <Card.Title className="spot-best-color">{name}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted spot-best-color">
+                      {craft}
+                    </Card.Subtitle>
+                    <Card.Text>{story}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </section>
-*/}
-      {/* Social Media Section */}
-      {/* <section className="social-section">
-        <div className="social-icons">
-          <a href="#"><FaInstagram /></a>
-          <a href="#"><FaFacebookF /></a>
-          <a href="#"><FaTwitter /></a>
-        </div>
-      </section> */}
+
+      <section className="best-sellers-section my-5 py-4">
+        <h2 className="text-center mb-4 best-sellers-title">🔥 Best Sellers</h2>
+        <Container>
+          <Row className="gy-4 justify-content-center">
+            {[
+              {
+                img: best1,
+                title: "Handwoven Cotton Saree",
+                artisan: "Meena & Daughters",
+                price: "₹2,499",
+              },
+              {
+                img: best2,
+                title: "Terracotta Tea Set",
+                artisan: "Priya S.",
+                price: "₹1,250",
+              },
+              {
+                img: best3,
+                title: "Paintings",
+                artisan: "Rahim K.",
+                price: "₹899",
+              },
+            ].map(({ img, title, artisan, price }, idx) => (
+              <Col xs={12} sm={6} md={4} lg={3} key={idx}>
+                <Card className="best-seller-card shadow-sm border-0 text-center h-100">
+                  <Card.Img
+                    variant="top"
+                    src={img}
+                    className="best-seller-img"
+                  />
+                  <Card.Body>
+                    <Card.Title className="spot-best-color">{title}</Card.Title>
+                    {/* <Card.Subtitle className="text-muted small mb-2">{artisan}</Card.Subtitle> */}
+                    <Card.Text className="fw-bold text-dark spot-best-color">
+                      {price}
+                    </Card.Text>
+                    <Button
+                      variant="dark"
+                      className="spot-best-color"
+                      size="sm"
+                    >
+                      View Product
+                    </Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
       <Footer />
     </div>
   );

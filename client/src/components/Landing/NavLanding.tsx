@@ -1,68 +1,76 @@
 import React from "react";
 import {
-  Button,
   ButtonGroup,
   Navbar,
   Dropdown,
   DropdownButton,
 } from "react-bootstrap";
 import "./LandingPage.css";
-import { Link, Links } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function NavLanding() {
   return (
     <div>
       <Navbar className="navbar-custom py-4" expand="lg">
-        <Link to="/">
-          <h1 className="text-2xl font-bold text-light ms-5 text-decoration-none">
-            ArtisanConnect
-          </h1>
+        <Link to="/" className="ms-5 text-decoration-none">
+          <h1 className="brand-heading">ArtisanConnect</h1>
         </Link>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
-          <div className="nav-buttons d-flex gap-2 align-items-center">
+          <div className="nav-buttons d-flex gap-3 align-items-center pe-4">
+            {/* About and Contact Text Links */}
+            <Link to="/about" className="nav-link-text text-decoration-none">
+              About
+            </Link>
+            <Link to="/contact" className="nav-link-text text-decoration-none">
+              Contact Us
+            </Link>
+
             {/* Become a Seller Dropdown */}
             <DropdownButton
               variant="outline-light"
-              title="Become a Artisans"
+              title="Become an Artisan"
               className="seller-btn"
             >
-              <Dropdown.Item href="">
-                <Link to="/artisan/login">Login</Link>
+              <Dropdown.Item as={Link} to="/artisan/login">
+                Login
               </Dropdown.Item>
-              <Dropdown.Item href="">
-                <Link to="/artisan/register">Register</Link>{" "}
+              <Dropdown.Item as={Link} to="/artisan/register">
+                Register
               </Dropdown.Item>
             </DropdownButton>
+
+            {/* Login and Signup Buttons */}
             <ButtonGroup>
-              {/* Login Dropdown */}
               <DropdownButton
                 as={ButtonGroup}
                 variant="outline-light"
                 title="Login"
                 className="login-btn"
               >
-                <Dropdown.Item href="">
-                  <Link to="/buyer/login">Buyer</Link>
+                <Dropdown.Item as={Link} to="/buyer/login">
+                  Buyer
                 </Dropdown.Item>
-                <Dropdown.Item href="">
-                  <Link to="/deliveryagent/login">Delivery Agents</Link>{" "}
+                <Dropdown.Item as={Link} to="/deliveryagent/login">
+                  Delivery Agents
                 </Dropdown.Item>
-                <Dropdown.Item href=""><Link to="/admin/login">Administrator</Link></Dropdown.Item>
+                <Dropdown.Item as={Link} to="/admin/login">
+                  Administrator
+                </Dropdown.Item>
               </DropdownButton>
 
-              {/* Sign Up Dropdown */}
               <DropdownButton
                 as={ButtonGroup}
                 variant="light"
                 title="Sign Up"
                 className="signup-btn"
               >
-                <Dropdown.Item href="">
-                  <Link to="/buyer/register">Buyer</Link>
+                <Dropdown.Item as={Link} to="/buyer/register">
+                  Buyer
                 </Dropdown.Item>
-                <Dropdown.Item href="">
-                  <Link to="/deliveryagent/register">Delivery Agents</Link>
+                <Dropdown.Item as={Link} to="/deliveryagent/register">
+                  Delivery Agents
                 </Dropdown.Item>
               </DropdownButton>
             </ButtonGroup>

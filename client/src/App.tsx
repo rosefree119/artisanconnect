@@ -51,7 +51,7 @@ function App() {
         />
 
         {/* artisan */}
-        <Route path="/artisan/login" element={<ArtisanLogin />} />
+           <Route path="/artisan/login" element={<ArtisanLogin />} />
         <Route path="/artisan/register" element={<ArtisanRegister />} />
         <Route path="/artisan/forgetpassword" element={<Artisanforget />} />
         <Route path="/artisan/homepage" element={<ArtisanHome />} />
