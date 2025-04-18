@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import NavMain from '../../../Navbar/NavMain'
-import workimg from "../../../../Assets/Rectangle 12.png"
-import "./ViewSingleWork.css"
-import { Icon } from "@iconify/react";
-import Footer from '../../../Footer/Footer';
+import Navbar from '../navigation/Navbar'
+import Footer from '../footer/Footer';
 import { Link, useParams } from 'react-router-dom';
-import axiosInstance from '../../../../Schemas/BaseUrl';
+import axiosInstance from '../../BaseApi/baseurl';
 import { toast } from 'react-toastify';
 function ViewSingleWork({url}) {
     const {id}=useParams()

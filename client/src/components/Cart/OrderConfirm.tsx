@@ -1,5 +1,4 @@
 import React from 'react'
-import "./OrderConfirm.css"
 import Navbar from '../navigation/Navbar'
 import Footer from '../footer/Footer'
 

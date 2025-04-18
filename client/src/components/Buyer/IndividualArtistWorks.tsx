@@ -1,17 +1,13 @@
-import React from "react";
-import Footer from "../../../Footer/Footer";
-import product from "../../../../Assets/Rectangle 12.png";
-import { Icon } from "@iconify/react";
-import artistimg from "../../../../Assets/aubrey-graham-photo-u164.jpg";
-import Usernav from "../../../Navbar/Usernav";
-import "./IndividualArtistWorks.css";
-import NavMain from "../../../Navbar/NavMain";
+import Footer from "../footer/Footer";
+import product from "../../assets/hero2.jpg";
+import artistimg from "../../assets/contactus.jpg";
+import Navbar from "../navigation/Navbar";
 import { Link } from "react-router-dom";
 
 function IndividualArtistWorks({ url }) {
   return (
     <>
-      <NavMain url={url} />
+      <Navbar url={url} />
 
       <section className="Cover-img">
         <h1>Works</h1>
@@ -57,10 +53,7 @@ function IndividualArtistWorks({ url }) {
 
                       <div className="gallery-chat-icon">
                         <Link to="/user_chat">
-                          <Icon
-                            icon="fluent:chat-32-filled"
-                            className="gallery-chat"
-                          />
+                         chat
                         </Link>
                       </div>
                     </div>
@@ -92,10 +85,7 @@ function IndividualArtistWorks({ url }) {
 
                       <div className="gallery-chat-icon">
                         <Link to="/user_chat">
-                          <Icon
-                            icon="fluent:chat-32-filled"
-                            className="gallery-chat"
-                          />
+                         chat
                         </Link>
                       </div>
                     </div>
@@ -127,10 +117,7 @@ function IndividualArtistWorks({ url }) {
 
                       <div className="gallery-chat-icon">
                         <Link to="/user_chat">
-                          <Icon
-                            icon="fluent:chat-32-filled"
-                            className="gallery-chat"
-                          />
+                        chat
                         </Link>
                       </div>
                     </div>
@@ -162,10 +149,7 @@ function IndividualArtistWorks({ url }) {
 
                       <div className="gallery-chat-icon">
                         <Link to="/user_chat">
-                          <Icon
-                            icon="fluent:chat-32-filled"
-                            className="gallery-chat"
-                          />
+                         chat
                         </Link>
                       </div>
                     </div>

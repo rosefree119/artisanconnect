@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Gallery.css";
 import Navbar from "../navigation/Navbar";
 import Footer from "../footer/Footer";
 import { Link } from "react-router-dom";

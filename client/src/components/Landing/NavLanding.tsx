@@ -19,7 +19,7 @@ function NavLanding() {
           </h1>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse className="justify-content-end">
+        <Navbar className="justify-content-end">
           <div className="nav-buttons d-flex gap-2 align-items-center">
             {/* Become a Seller Dropdown */}
             <DropdownButton
@@ -67,7 +67,7 @@ function NavLanding() {
               </DropdownButton>
             </ButtonGroup>
           </div>
-        </Navbar.Collapse>
+        </Navbar>
       </Navbar>
     </div>
   );
