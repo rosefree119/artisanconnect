@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../navigation/Navbar";
-import Hero from "./Hero";
 // import FeaturedArtisans from './FeaturedArtisans';
 import Footer from "../footer/Footer";
 import deliveryimage from "../../assets/deliveryimage.jpg";
