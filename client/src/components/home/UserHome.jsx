@@ -34,23 +34,27 @@ function UserHome() {
           </section>
 
           <section className="py-5 bg-white">
-      <Container>
-        <Row className="justify-content-center">
-          <Col md={10}>
-            <h2 className="text-center text-indigo-800 fw-bold mb-4">
-              Celebrating Craftsmanship & Culture
-            </h2>
-            <p className="fs-5 text-muted text-center">
-              Discover a vibrant selection of handcrafted products ranging from traditional handloom textiles and wooden carvings to eco-friendly home décor and naturally dyed accessories.  
-              Each piece tells a story of heritage, precision, and cultural pride passed down through generations.  
-              Our dedicated artisans pour their heart and soul into every creation, ensuring authenticity and quality in every detail.  
-              Support local communities while experiencing the richness of India’s diverse art forms—all in one place.
-            </p>
-          </Col>
-        </Row>
-      </Container>
-    </section>
-
+            <Container>
+              <Row className="justify-content-center">
+                <Col md={10}>
+                  <h2 className="text-center text-indigo-800 fw-bold mb-4">
+                    Celebrating Craftsmanship & Culture
+                  </h2>
+                  <p className="fs-4 text-muted text-center">
+                    Discover a vibrant selection of handcrafted products ranging
+                    from traditional handloom textiles and wooden carvings to
+                    eco-friendly home décor and naturally dyed accessories. Each
+                    piece tells a story of heritage, precision, and cultural
+                    pride passed down through generations. Our dedicated
+                    artisans pour their heart and soul into every creation,
+                    ensuring authenticity and quality in every detail. Support
+                    local communities while experiencing the richness of India’s
+                    diverse art forms—all in one place.
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+          </section>
 
           <section className="py-5 bg-light">
             <Container>
@@ -69,13 +73,13 @@ function UserHome() {
                   <h2 className="text-indigo-800 fw-bold mb-3">
                     Explore Unique Categories
                   </h2>
-                  <p className="text-muted mb-4">
+                  <p className="text-muted fs-3 mb-4">
                     Dive into our vibrant world of handcrafted artistry. Each
                     category brings you closer to local craftsmanship and
                     traditional skills. Choose your favorite and discover
                     treasures made with passion.
                   </p>
-                  <ul className="list-unstyled fs-5 ps-3">
+                  <ul className="list-unstyled fs-4 ps-3">
                     <li className="mb-2">🌿 Handloom Weaves</li>
                     <li className="mb-2">🖌️ Natural Dye Textiles</li>
                     <li className="mb-2">🪵 Wooden Carvings</li>
@@ -96,7 +100,7 @@ function UserHome() {
               <Row className="gy-4 justify-content-center">
                 {[
                   {
-                    name: "Lakshmi Devi",
+                    name: "Lakshmi Deepak",
                     expertise: "Handwoven Sarees",
                     image: lakshmi,
                   },
@@ -104,6 +108,10 @@ function UserHome() {
                   <Col md={4} sm={6} key={index}>
                     <Card className="artisan-card text-center">
                       <Card.Body>
+                        <Card.Img
+                          src={artisan.image}
+                          className="artisan-img img-fluid rounded-circle"
+                        />
                         <Card.Title className="artisan-name">
                           {artisan.name}
                         </Card.Title>

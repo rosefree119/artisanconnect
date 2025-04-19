@@ -107,8 +107,8 @@
   }
   
   .artisan-img {
-    height: 240px;
-    width: 110px;
+    height: 180px;
+    width: 170px;
     object-fit: cover;
     border-radius: 50% / 60%;
     margin: 20px auto 0;
