@@ -3,6 +3,7 @@ import "./about.css";
 import bannerImage from "../../assets/aboutus-banner.jpg"; // Background image
 import teamImage from "../../assets/team.jpg"; // Optional image
 import NavLanding from "./NavLanding";
+import Footer from "../footer/Footer";
 
 export default function AboutPage() {
   return (
@@ -33,6 +34,7 @@ export default function AboutPage() {
           <img src={teamImage} alt="Our Team" className="description-image" />
         </div>
       </section>
+      <Footer/>
     </div>
     </>
   );

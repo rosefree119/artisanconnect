@@ -6,7 +6,7 @@
 
 /* Navbar */
 .navbar-custom {
-  background-color: #3f2a87; /* Deep Indigo */
+  background-color:#3949AB;
   padding: 0.8rem 2rem;
 }
 
@@ -25,7 +25,7 @@
 
 .signup-btn .dropdown-toggle {
   background-color: #fff;
-  color: #3f2a87;
+  color:#3949AB;
   margin-right: 25px;
 }
 
@@ -37,7 +37,7 @@
 
 /* Carousel */
 .carousel-caption {
-  background-color: rgba(47, 29, 97, 0.6);
+  background-color: #3949AB;
   border-radius: 10px;
   padding: 1rem;
   color: white;
@@ -58,7 +58,7 @@
 
 .description-text {
   font-size: 1.2rem;
-  color: #2e1a73;
+  color:#3949AB;
 }
 
   /* Features */
@@ -69,7 +69,7 @@
   
   .features-title {
     margin-bottom: 2rem;
-    color:  #5046f4;
+    color:  #3949AB;
   }
   
   .feature-cards {
@@ -111,7 +111,7 @@
   background-color: #ffffff;
   padding: 1.5rem;
   border-radius: 1rem;
-  color: #2e1a73;
+  color: #3949AB;
   box-shadow: 0 4px 15px rgba(63, 42, 135, 0.1);
 }
 
@@ -158,7 +158,7 @@
 .best-sellers-title {
   font-weight: 700;
   font-size: 2rem;
-  color: #3f2a87;
+  color:#3949AB;
 }
 
 .best-seller-card {
@@ -180,12 +180,12 @@
 }
 
 .spot-best-color {
-  color: #3f2a87;
+  color: #3949AB;
 }
 
 /* Footer & Social */
 .social-section {
-  background-color: #3f2a87;
+  background-color: #3949AB;
   color: white;
   text-align: center;
   padding: 1rem;

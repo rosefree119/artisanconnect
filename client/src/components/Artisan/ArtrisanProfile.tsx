@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import axiosInstance from "../../BaseApi/Baseurl";
 import { toast } from "react-toastify";
 import ArtisanNavbar from "../navigation/ArtisanNavbar";
+import Footer from "../footer/Footer";
 
 function ArtrisanProfile({ url }) {
   const userid = localStorage.getItem("artisanid");
@@ -301,6 +302,7 @@ function ArtrisanProfile({ url }) {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

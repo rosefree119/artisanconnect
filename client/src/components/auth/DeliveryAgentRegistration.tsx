@@ -3,6 +3,7 @@ import { Eye, EyeOff } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import NavLanding from "../Landing/NavLanding";
 import axiosInstance from "../../BaseApi/Baseurl";
+import Footer from "../footer/Footer";
 
 function DeliveryAgentRegistration() {
   const navigate = useNavigate();
@@ -246,6 +247,7 @@ function DeliveryAgentRegistration() {
           </div>
         </form>
       </div>
+      <Footer/>
     </>
   );
 }

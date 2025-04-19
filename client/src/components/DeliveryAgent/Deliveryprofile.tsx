@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 
 import axiosInstance from '../../BaseApi/Baseurl'
 import { toast } from "react-toastify";
+import ArtisanNavbar from '../navigation/ArtisanNavbar';
+import Footer from '../footer/Footer';
 
 function Deliveryprofile({url}) {
     const userid=localStorage.getItem("userid")
@@ -98,6 +100,8 @@ const handleEdit = () => {
             });
     };
     return (
+      <>
+      <ArtisanNavbar/>
         <div className="min-h-screen bg-gray-100 py-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
             {/* Cover + Profile */}
@@ -201,6 +205,8 @@ const handleEdit = () => {
             </div>
           </div>
         </div>
+        <Footer/>
+        </>
       );
       
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axiosInstance from "../../BaseApi/Baseurl";
 import { Link, useNavigate } from "react-router-dom";
 import NavLanding from "../Landing/NavLanding";
+import Footer from "../footer/Footer";
 
 function Artisanforget() {
   const [data, setData] = useState({ email: "", password: "" });
@@ -99,6 +100,7 @@ function Artisanforget() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
