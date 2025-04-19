@@ -17,7 +17,7 @@ function NavLanding() {
         </Link>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse className="justify-content-end">
+        <Navbar className="justify-content-end">
           <div className="nav-buttons d-flex gap-3 align-items-center pe-4">
             {/* About and Contact Text Links */}
             <Link to="/about" className="nav-link-text text-decoration-none">
@@ -75,7 +75,7 @@ function NavLanding() {
               </DropdownButton>
             </ButtonGroup>
           </div>
-        </Navbar.Collapse>
+        </Navbar>
       </Navbar>
     </div>
   );

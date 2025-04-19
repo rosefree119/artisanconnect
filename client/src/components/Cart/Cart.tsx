@@ -27,7 +27,7 @@ function Cart({ url }) {
         const mappedCartItems = res.data.data.map((item) => ({
           userid: userid,
           artid: item.artid._id,
-          artistId: item.artid.artistId, 
+          artistId: item.artid.artistId,
         }));
         setCartItems(mappedCartItems);
       })
@@ -55,16 +55,16 @@ function Cart({ url }) {
   };
 
   const buttonStyle = {
-    padding: '10px 20px',
-    fontSize: '16px',
-    backgroundColor: '#4CAF50',
-    color: 'white',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    position: 'relative',
-    animation: 'blink 1s infinite', 
-    transition: 'background-color 0.3s ease',
+    padding: "10px 20px",
+    fontSize: "16px",
+    backgroundColor: "#5046f4", // Updated color
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    position: "relative",
+    animation: "blink 1s infinite",
+    transition: "background-color 0.3s ease",
   };
 
   const [totalPrice, setTotalPrice] = useState(0);
@@ -72,111 +72,179 @@ function Cart({ url }) {
     const calculateTotalPrice = () => {
       let sum = 0;
       art?.forEach((a) => {
-        sum += a?.artid?.price || 0; 
+        sum += a?.artid?.price || 0;
       });
-      setTotalPrice(sum); 
+      setTotalPrice(sum);
     };
 
     calculateTotalPrice();
   }, [art]);
 
-
-  const removecartfn=((itemid)=>{
-    axiosInstance.post(`deleteCartById/${itemid}`)
-    .then((res)=>{
+  const removecartfn = (itemid) => {
+    axiosInstance.post(`deleteCartById/${itemid}`).then((res) => {
       console.log(res);
-      if(res.data.status==200){
-        alert("Item removed successfully")
-        window.location.reload()
+      if (res.data.status == 200) {
+        alert("Item removed successfully");
+        window.location.reload();
       }
-    })
-    .catch=((err)=>{
+    }).catch = (err) => {
       console.log(err);
-    })
-  })
-
-  //order from cart
-
+    };
+  };
 
   return (
     <>
       <Navbar url={url} />
-      <section className="Cover-img">
-        <h1>Cart</h1>
-      </section>
 
-      <div className="Cart">
-        <h1>CART</h1>
-        <p>
+      {/ Banner Section /}
+      <section
+        style={{
+          backgroundColor: "#5046f4",
+          color: "#fff",
+          padding: "15px 0",
+          textAlign: "center",
+        }}
+      >
+        <h1 style={{ fontSize: "30px", margin: "0" }}>Cart</h1>
+      </section>
+      {/ Cart Container /}
+      <div
+        style={{
+          maxWidth: "1200px",
+          margin: "40px auto",
+          padding: "20px",
+          backgroundColor: "#f5f5f5",
+          borderRadius: "10px",
+          boxShadow: "0 0 10px rgba(0,0,0,0.05)",
+        }}
+      >
+        <h1 style={{ textAlign: "center", fontSize: "36px", color: "#5046f4" }}>CART</h1>
+        <p
+          style={{
+            textAlign: "center",
+            fontSize: "16px",
+            color: "#666",
+            marginBottom: "30px",
+          }}
+        >
           Dive into a vibrant ocean of creativity. Musefire, passionate artists
           meet art lovers seeking the extraordinary.
         </p>
 
-        <div className="cart-items">
-          <div className="delivery-schedule">
-            <table width={"100%"} className="cart-table">
-              <thead>
+        {/ Cart Table /}
+        <div style={{ overflowX: "auto" }}>
+          <table
+            style={{
+              width: "100%",
+              borderCollapse: "collapse",
+              backgroundColor: "#fff",
+              borderRadius: "10px",
+            }}
+          >
+            <thead style={{ backgroundColor: "#e6e0f8" }}>
+              <tr>
+                <th style={{ padding: "16px", textAlign: "left", color: "#5046f4" }}>
+                  ITEM
+                </th>
+                <th style={{ padding: "16px", textAlign: "left", color: "#5046f4" }}>
+                  PRICE
+                </th>
+                <th style={{ padding: "16px" }}></th>
+              </tr>
+            </thead>
+            <tbody>
+              {art && art.length ? (
+                art.map((a, index) => (
+                  <tr key={index} style={{ borderBottom: "1px solid #ddd" }}>
+                    <td
+                      style={{
+                        padding: "16px",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "15px",
+                      }}
+                    >
+                      <img
+                        src={`${url}/${a?.artid?.file?.filename}`}
+                        alt="item-img"
+                        style={{
+                          width: "100px",
+                          height: "100px",
+                          objectFit: "cover",
+                          borderRadius: "10px",
+                          border: "2px solid #c4b3f2",
+                        }}
+                      />
+                      <h3 style={{ margin: 0 }}>{a?.artid?.name}</h3>
+                    </td>
+                    <td style={{ padding: "16px", fontWeight: "600", fontSize: "18px" }}>
+                      ₹{a?.artid?.price}
+                    </td>
+                    <td style={{ padding: "16px" }}>
+                      <button
+                        type="button"
+                        onClick={() => removecartfn(a._id)}
+                        style={{
+                          padding: "8px 15px",
+                          backgroundColor: "#5046f4", // Updated color
+                          color: "white",
+                          border: "none",
+                          borderRadius: "6px",
+                          fontWeight: "600",
+                          cursor: "pointer",
+                        }}
+                      >
+                        Remove
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              ) : (
                 <tr>
-                  <th width={"90%"}>ITEM</th>
-                  {/* <th width={"40%"}>QTY</th> */}
-                  <th width={"30%"}>PRICE</th>
-                  <th width={"30%"}></th>
+                  <td colSpan="3" style={{ textAlign: "center", padding: "20px", color: "#999" }}>
+                    No Works Available
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {art && art.length ? (
-                  art.map((a) => {
-                    return (
-                      <tr>
-                        <td id="cartitemscolb">
-                          <img
-                            src={`${url}/${a?.artid?.file?.filename}`}
-                            alt="item-img"
-                          />
-                          <h3>{a?.artid?.name}</h3>
-                        </td>
-                        <td id="bold">
-                          <span>₹</span>
-                          {a?.artid?.price}
-                        </td>
-                        <td id="bold">
-                          <button
-                            type="submit"
-                            className="btn btn-danger"
-                            style={buttonStyle}
-                            onClick={()=>{removecartfn(a._id)}}
-                          >
-                            Remove
-                          </button>
-                        </td>
-                      </tr>
-                    );
-                  })
-                ) : (
-                  <div>No Works Available</div>
-                )}
-
-              </tbody>
-            </table>
-
-            <div className="cart-grandtotal">
-              <h4>
-                <span id="total">GRAND TOTAL</span> &nbsp;
-                <span id="rupees">₹</span>{totalPrice}
-              </h4>
-            </div>
-          </div>
+              )}
+            </tbody>
+          </table>
         </div>
 
-        <div className="itemdelivery">
-          <input type="checkbox" />
-          {/* <label>Need Delivery</label> */}
+        {/ Total & Checkout /}
+        <div
+          style={{
+            textAlign: "right",
+            marginTop: "30px",
+            fontSize: "20px",
+            fontWeight: "bold",
+          }}
+        >
+          GRAND TOTAL:{
+" "}
+          <span style={{ color: "#5046f4", fontSize: "22px" }}>₹{totalPrice}</span>
         </div>
-        <div className="cart-btn">
-              <button type="submit" onClick={handleCheckout}>CHECKOUT</button>
-            </div>
 
+        <div style={{ textAlign: "center", marginTop: "30px" }}>
+          <button
+            type="button"
+            onClick={handleCheckout}
+            style={{
+              backgroundColor: "#5046f4", // Updated color
+              color: "white",
+              padding: "12px 35px",
+              fontSize: "18px",
+              borderRadius: "8px",
+              fontWeight: "bold",
+              border: "none",
+              cursor: "pointer",
+              boxShadow: "0 3px 6px rgba(0,0,0,0.1)",
+            }}
+          >
+            CHECKOUT
+          </button>
+        </div>
       </div>
+
       <Footer />
     </>
   );
