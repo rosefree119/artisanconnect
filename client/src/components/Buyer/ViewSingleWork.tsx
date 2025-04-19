@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import NavMain from '../../../Navbar/NavMain'
-import workimg from "../../../../Assets/Rectangle 12.png"
-import "./ViewSingleWork.css"
-import { Icon } from "@iconify/react";
-import Footer from '../../../Footer/Footer';
+import Navbar from '../navigation/Navbar'
+import Footer from '../footer/Footer.js';
 import { Link, useParams } from 'react-router-dom';
-import axiosInstance from '../../../../Schemas/BaseUrl';
-import { toast } from 'react-toastify';
+import axiosInstance from '../../BaseApi/Baseurl.js';
+
 function ViewSingleWork({url}) {
     const {id}=useParams()
     const[art,setArt]=useState({})
@@ -33,7 +30,7 @@ function ViewSingleWork({url}) {
         .then((res)=>{
           console.log(res);
           if(res.data.status==200){
-            toast.success("Cart added successfully")
+            alert("Cart added successfully")
           }
         })
         .catch((error) => {
@@ -43,7 +40,7 @@ function ViewSingleWork({url}) {
     
     return (
         <>
-            <NavMain url={url}/>
+            <Navbar url={url}/>
             <div className='user-orders'>
                 <section className='Cover-img'>
                     <h1>Works</h1>
@@ -64,11 +61,11 @@ function ViewSingleWork({url}) {
                             <button
                                 onClick={() => cartfn(art._id, art.artistId._id)}
 
-                            > <Icon icon="ion:cart-outline" className="billingicon" /> ADD TO CART</button>
+                            >  ADD TO CART</button>
 
                         </div>
                         <div className='viewsingleworkbtn2'>
-                            <Link to={`/payment/${art._id}`} ><button> <Icon icon="carbon:flash" className="billingicon" /> BUY NOW</button></Link>
+                            <Link to={`/payment/${art._id}`} ><button>  BUY NOW</button></Link>
 
                         </div>
 
