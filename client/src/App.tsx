@@ -22,6 +22,25 @@ import DeliveryAgentHome from "./components/DeliveryAgent/DeliveryAgentHome";
 import ArtisanHome from "./components/Artisan/ArtisanHome";
 import ArtrisanProfile from "./components/Artisan/ArtrisanProfile";
 import Deliveryprofile from "./components/DeliveryAgent/Deliveryprofile";
+import AdminViewUsers from "./components/admin/AdminViewUsers";
+import AdminViewArtists from "./components/admin/AdminViewArtists";
+import AdminViewAgents from "./components/admin/AdminViewAgents";
+import AdminViewArtistIndividual from "./components/admin/AdminViewArtistIndividual";
+import AdminViewUserIndividual from "./components/admin/AdminViewUserIndividual";
+import AdminViewAgentRequest from "./components/admin/AdminViewAgentRequest";
+import AdminViewRequestedAgent from "./components/admin/AdminViewRequestedAgent";
+import AdminViewDeliveryAgentIndividual from "./components/admin/AdminViewDeliveryAgentIndividual";
+import Cart from "./components/Cart/Cart";
+import NotificationMain from "./components/Notification/NotificationMain";
+import Gallery from "./components/Gallery/Gallery";
+import Notification from "./components/Notification/Notification";
+import Checkout from "./components/Cart/Checkout";
+import OrderConfirm from "./components/Cart/OrderConfirm";
+import ViewArtists from "./components/Buyer/BuyeriewArtists";
+import IndividualArtistWorks from "./components/Buyer/IndividualArtistWorks";
+import UserOrders from "./components/Orders/UserOrders";
+import ViewSingleWork from "./components/Buyer/ViewSingleWork";
+import Payment from "./components/Orders/Payment";
 
 // #5046f4
 function App() {
@@ -49,6 +68,26 @@ function App() {
           path="/buyer/viewproductdetails/:productid"
           element={<ProductDetail />}
         />
+
+        <Route path="/user_cart" element={<Cart url={imageBaseUrl} />} />
+
+        <Route path="/user_notification" element={<NotificationMain />} />
+
+        <Route path="/user_messages" element={<Notification />} />
+        <Route path="/gallery" element={<Gallery url={imageBaseUrl} />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/order_confirmed" element={<OrderConfirm />} />
+        <Route path="/view_artists" element={<ViewArtists url={imageBaseUrl} />} />
+        <Route
+          path="/view_artistworksindividual"
+          element={<IndividualArtistWorks url={imageBaseUrl} />}
+        />
+        <Route path="/view_orders" element={<UserOrders url={imageBaseUrl} />} />
+        <Route
+          path="/viewsinglework_art/:id"
+          element={<ViewSingleWork url={imageBaseUrl} />}
+        />
+        <Route path="/payment/:id" element={<Payment url={imageBaseUrl} />} />
 
         {/* artisan */}
            <Route path="/artisan/login" element={<ArtisanLogin />} />
@@ -78,7 +117,34 @@ function App() {
         {/* admin */}
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/homepage" element={<AdminDashboard />} />
+        <Route path="/admin/viewuser" element={<AdminViewUsers />} />
+        <Route path="/admin/viewartist" element={<AdminViewArtists />} />
+        <Route path="/admin/viewagent" element={<AdminViewAgents />} />
+        <Route
+          path="/admin_viewartistindividual/:id"
+          element={<AdminViewArtistIndividual url={imageBaseUrl} />}
+        />
+        <Route
+          path="/admin_viewuserindividual/:id"
+          element={<AdminViewUserIndividual url={imageBaseUrl} />}
+        />
+
+        <Route
+          path="admin_viewagentrequests"
+          element={<AdminViewAgentRequest />}
+        />
+        <Route
+          path="/admin_viewrequestedagentdetails/:id"
+          element={<AdminViewRequestedAgent url={imageBaseUrl} />}
+        />
+
+        <Route
+          path="/admin_viewdeliveryagentindividua/:id"
+          element={<AdminViewDeliveryAgentIndividual url={imageBaseUrl} />}
+        />
       </Routes>
+
+      {/* cart */}
     </BrowserRouter>
   );
 }

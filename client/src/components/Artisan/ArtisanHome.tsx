@@ -4,7 +4,7 @@ import Footer from "../footer/Footer";
 import artisanimg from "../../assets/download (4).jpg";
 import ArtisanNavbar from "../navigation/ArtisanNavbar";
 import { Container, Row, Col, Button, Card, Image } from "react-bootstrap";
-import artisanImage from "../../assets/best2.jpg";
+import artisanImage from "../../assets/aesthetic.jpg";
 import "./ArtisanHomePage.css";
 
 const ArtisanHome: React.FC = () => {
@@ -86,12 +86,81 @@ const ArtisanHome: React.FC = () => {
                 <h3 className="fw-bold text-indigo-600 mb-3">
                   Craft with Love & Skill
                 </h3>
-                <p className="fs-5 text-muted">
+                <p className="fs-3 text-muted">
                   "Don’t just dream it—craft it into reality. Your art holds the
                   power to inspire, and we’re here to help you share it with the
                   world. From your hands to global homes, your journey begins
                   here."
                 </p>
+                <br />
+                <br />
+                <p className="fs-4 text-indigo-900">
+                There are stories waiting to be told. Don’t just dream it—bring it
+                to life with your hands and heart. Your art has the power to
+                inspire, and we’re here to help you share that inspiration with
+                the world. From your workshop to homes across the globe, this is
+                where your journey begins. Each piece you make carries your
+                passion, culture, and creativity. We believe in empowering
+                artisans to thrive by turning their talents into opportunities.
+                With our platform, you're not just selling—you’re building a
+                legacy. Together, let’s celebrate craftsmanship and make your
+                dreams a global reality.</p>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
+        <section className="py-5 bg-white">
+          <Container className="steps px-4 py-5">
+            <div className="text-center mb-5">
+              <h2 className="fw-bold text-indigo-600">
+                Your Journey, Step by Step
+              </h2>
+              <p className="fs-5 text-muted">
+                From showcasing your craft to receiving your earnings – it's
+                simple and seamless.
+              </p>
+            </div>
+            <Row className="gy-4 text-center">
+              <Col md={3}>
+                <div>
+                  <div className="mb-2 fs-3 fw-bold text-indigo-600">1</div>
+                  <h5 className="fw-bold text-dark">Add Your Product</h5>
+                  <p className="text-muted">
+                    Upload clear photos, enter a description, and set your
+                    price—it’s quick and easy.
+                  </p>
+                </div>
+              </Col>
+              <Col md={3}>
+                <div>
+                  <div className="mb-2 fs-3 fw-bold text-indigo-600">2</div>
+                  <h5 className="fw-bold text-dark">Get Notified on Orders</h5>
+                  <p className="text-muted">
+                    We notify you when someone places an order. You pack the
+                    item with care.
+                  </p>
+                </div>
+              </Col>
+              <Col md={3}>
+                <div>
+                  <div className="mb-2 fs-3 fw-bold text-indigo-600">3</div>
+                  <h5 className="fw-bold text-dark">Delivery is Handled</h5>
+                  <p className="text-muted">
+                    Our delivery partners pick it up and ensure it reaches the
+                    customer safely.
+                  </p>
+                </div>
+              </Col>
+              <Col md={3}>
+                <div>
+                  <div className="mb-2 fs-3 fw-bold text-indigo-600">4</div>
+                  <h5 className="fw-bold text-dark">Receive Your Payment</h5>
+                  <p className="text-muted">
+                    Once the product is delivered, your earnings are sent
+                    directly to your account.
+                  </p>
+                </div>
               </Col>
             </Row>
           </Container>
@@ -120,30 +189,6 @@ const ArtisanHome: React.FC = () => {
                   <p>Average Rating</p>
                 </div>
               </Col>
-            </Row>
-          </Container>
-        </section>
-
-        {/* Section 4: Customer Feedback */}
-        <section className="feedback-section">
-          <Container>
-            <h2 className="section-title">What Customers Are Saying</h2>
-            <Row className="gy-4">
-              {[1, 2, 3].map((item) => (
-                <Col md={4} key={item}>
-                  <Card className="feedback-card">
-                    <Card.Body>
-                      <Card.Text className="feedback-text">
-                        “Absolutely loved the handmade earrings! You can feel
-                        the care that went into it.”
-                      </Card.Text>
-                      <Card.Subtitle className="feedback-author">
-                        – Priya, Kerala
-                      </Card.Subtitle>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              ))}
             </Row>
           </Container>
         </section>
