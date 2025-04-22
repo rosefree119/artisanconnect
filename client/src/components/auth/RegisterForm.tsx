@@ -3,6 +3,7 @@ import { Eye, EyeOff } from 'lucide-react';
 import NavLanding from '../Landing/NavLanding';
 import { useNavigate } from 'react-router-dom';
 import axiosInstance from "../../BaseApi/Baseurl"
+import Footer from '../footer/Footer';
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -237,6 +238,7 @@ const RegisterForm = () => {
           </form>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

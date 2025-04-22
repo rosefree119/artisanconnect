@@ -178,6 +178,45 @@ export default function LandingPage() {
         </Container>
       </section>
 
+
+      <section className="py-5 bg-indigo-100">
+  <Container>
+    <div className="text-center mb-5">
+      <h2 className="fw-bold text-indigo-600">Support Local, Support the Earth</h2>
+      <p className="fs-5 text-muted">
+        Every choice you make matters. Here's how your support empowers both artisans and the planet.
+      </p>
+    </div>
+    <Row className="gy-4">
+      <Col md={4}>
+        <div>
+          <h5 className="text-indigo-600 fw-bold">Eco-Friendly Practices</h5>
+          <p className="text-muted">
+            Locally sourced products travel shorter distances, reducing transportation emissions and your carbon footprint.
+          </p>
+        </div>
+      </Col>
+      <Col md={4}>
+        <div>
+          <h5 className="text-indigo-600 fw-bold">Sustainable Communities</h5>
+          <p className="text-muted">
+            When you buy local, you invest in community livelihoods and support sustainable, small-scale production.
+          </p>
+        </div>
+      </Col>
+      <Col md={4}>
+        <div>
+          <h5 className="text-indigo-600 fw-bold">Earth-Friendly Choices</h5>
+          <p className="text-muted">
+            Local artisans use fewer resources and minimal packaging—helping reduce waste and preserve the environment.
+          </p>
+        </div>
+      </Col>
+    </Row>
+  </Container>
+</section>
+
+
       <section className="best-sellers-section my-5 py-4">
         <h2 className="text-center mb-4 best-sellers-title">🔥 Best Sellers</h2>
         <Container>
@@ -215,13 +254,7 @@ export default function LandingPage() {
                     <Card.Text className="fw-bold text-dark spot-best-color">
                       {price}
                     </Card.Text>
-                    <Button
-                      variant="dark"
-                      className="spot-best-color"
-                      size="sm"
-                    >
-                      View Product
-                    </Button>
+                    
                   </Card.Body>
                 </Card>
               </Col>

@@ -3,6 +3,7 @@ import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import NavLanding from "../Landing/NavLanding";
 import axiosInstance from "../../BaseApi/Baseurl";
+import Footer from "../footer/Footer";
 
 function AdminLogin() {
   const [showPassword, setShowPassword] = useState(false);
@@ -125,6 +126,7 @@ function AdminLogin() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

@@ -85,33 +85,10 @@
     margin-top: 8px;
   }
 
-  
-  .feedback-section {
-    background-color: #f4f4ff;
-    padding: 60px 0;
-  }
-  
-  .feedback-card {
-    border: none;
-    background: #fff;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  }
-  
-  .feedback-text {
-    font-style: italic;
-    font-size: 1.05rem;
-    color: #444;
-    margin-bottom: 1rem;
-  }
-  
-  .feedback-author {
-    font-weight: 500;
-    color: indigo;
-    font-size: 0.95rem;
-  }
-  
+.steps{
+  background-color:#ece2f9 ;
+  border-radius: 15px;
+}
 
   .meet-artisans-section {
     background-color: #fefaff;
@@ -130,8 +107,8 @@
   }
   
   .artisan-img {
-    height: 240px;
-    width: 110px;
+    height: 180px;
+    width: 170px;
     object-fit: cover;
     border-radius: 50% / 60%;
     margin: 20px auto 0;

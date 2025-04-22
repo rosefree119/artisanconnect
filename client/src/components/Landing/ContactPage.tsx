@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import "./contact.css";
 import contactus from "../../assets/contactus.jpg";
 import NavLanding from "./NavLanding";
+import Footer from "../footer/Footer";
 
 export default function ContactPage() {
   return (
@@ -22,11 +23,11 @@ export default function ContactPage() {
       <div className="sidebar">
         <div className="contact-item">
           <MapPin className="icon" />
-          <span>123, Indigo Street, Thiruvananthapuram, Kerala</span>
+          <span>ArtisansConnect, no: 12, Ulloor junction, Thiruvananthapuram, Kerala</span>
         </div>
         <div className="contact-item">
           <Mail className="icon" />
-          <span>contact@yourcompany.com</span>
+          <span>contact@artisansconnect.com</span>
         </div>
         <div className="contact-item">
           <Phone className="icon" />
@@ -57,7 +58,9 @@ export default function ContactPage() {
           </form>
         </div>
       </div>
+      
     </div>
+    <Footer/>
     </>
   );
 }
